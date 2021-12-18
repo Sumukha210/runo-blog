@@ -6,6 +6,14 @@ if (!defined('_S_VERSION')) {
 }
 
 
+function runo_website_setup()
+{
+    add_theme_support('post-thumbnails');
+}
+
+add_action("after_setup_theme", "runo_website_setup");
+
+
 function load_runo_assets()
 {
     wp_enqueue_style('runo_blog_styles', get_stylesheet_uri(), array(), _S_VERSION);
@@ -21,6 +29,8 @@ function load_runo_assets()
         wp_enqueue_style('aboutPage', get_template_directory_uri() . "/assets/dist/aboutpage.css", array(), _S_VERSION);
     } elseif (is_page("contact")) {
         wp_enqueue_style('contactPage', get_template_directory_uri() . "/assets/dist/contact.css", array(), _S_VERSION);
+    } elseif (is_singular("post")) {
+        wp_enqueue_style('singleBlogPage', get_template_directory_uri() . "/assets/dist/singleBlog.css", array(), _S_VERSION);
     }
 }
 

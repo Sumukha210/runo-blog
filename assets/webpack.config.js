@@ -68,7 +68,6 @@ module.exports = {
 };
 
 // module.exports = config;
-
 // new PurgecssPlugin({
 //   paths: glob.sync([
 //     "./../page-templates/*.php",

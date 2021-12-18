@@ -1,0 +1,24 @@
+@use "../utils/variables" as *;
+
+.hero {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  width: 100vw;
+
+  .row {
+    height: calc(60vh + 180px);
+    color: $textLight;
+    text-align: center;
+  }
+
+  &__title {
+    line-height: 70px;
+    font-size: 3.5rem;
+    font-weight: bold;
+  }
+}
+
+.content__section {
+  margin-top: 5rem;
+}

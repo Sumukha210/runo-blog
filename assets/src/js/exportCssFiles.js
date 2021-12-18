@@ -21,3 +21,9 @@ import(
   /* webpackPreload:true */
   "../styles/pages/contact.scss"
 );
+
+import(
+  /* webpackChunkName: "singleBlog" */
+  /* webpackPreload:true */
+  "../styles/pages/singleBlog.scss"
+);

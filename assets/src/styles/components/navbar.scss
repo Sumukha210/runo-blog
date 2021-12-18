@@ -1,0 +1,104 @@
+@use "../utils/breakpoints" as *;
+// @use "../utils/variables" as *;
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.2);
+  color: $textLight;
+  padding: 10px 0;
+
+  &__logo {
+    a {
+      cursor: pointer;
+      color: $textLight;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  }
+
+  svg {
+    vertical-align: initial;
+  }
+
+  @include breakpoint-up(lg) {
+    svg {
+      height: 20px;
+      width: 20px;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__menu {
+      display: flex;
+      align-items: center;
+      flex: 2;
+      justify-content: flex-end;
+
+      h6 {
+        margin-right: 20px;
+
+        a {
+          color: $textLight-50;
+          position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            height: 4px;
+            width: 0%;
+            background: $primaryColor;
+            transition: width 0.3s ease-in;
+          }
+
+          &:hover::after {
+            width: 100%;
+          }
+
+          &.active {
+            color: $textLight;
+
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: -10px;
+              left: 0;
+              height: 4px;
+              width: 100%;
+              background: $primaryColor;
+            }
+          }
+        }
+      }
+    }
+
+    &__icons {
+      border-left: 1px solid $textGrayColor;
+      border-right: 1px solid $textGrayColor;
+      padding-left: 1.2rem;
+      padding-right: 1.2rem;
+
+      svg {
+        &:not(:last-child) {
+          margin-right: 1rem;
+        }
+      }
+    }
+
+    &__end {
+      margin-left: 1.2rem;
+      .menu--icon {
+        display: none;
+      }
+    }
+  }
+}
